@@ -20,6 +20,6 @@ jobs:
       - run: python scripts/build_release.py
       - uses: actions/upload-artifact@v4
         with:
-          name: skill-builder
-          path: dist/skill-builder.skill
+          name: make-skill
+          path: dist/make-skill.skill
           if-no-files-found: error

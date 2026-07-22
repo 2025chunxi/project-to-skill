@@ -1,4 +1,4 @@
-<h1 align="center">skill-builder</h1>
+<h1 align="center">make-skill</h1>
 
 <p align="center"><strong>Turn projects into installable Codex Skills.</strong></p>
 
@@ -8,14 +8,14 @@
 
 <p align="center">
   <a href="README.md">简体中文</a> · <strong>English</strong> ·
-  <a href="https://github.com/2025chunxi/skill-builder/releases/tag/v0.2.0-beta">Download v0.2.0-beta</a> ·
-  <a href="https://github.com/2025chunxi/skill-builder/issues">Report an issue</a>
+  <a href="https://github.com/2025chunxi/make-skill/releases/tag/v0.3.0-beta">Download v0.3.0-beta</a> ·
+  <a href="https://github.com/2025chunxi/make-skill/issues">Report an issue</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/2025chunxi/skill-builder/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/2025chunxi/skill-builder/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/2025chunxi/skill-builder/releases/tag/v0.2.0-beta"><img alt="Release" src="https://img.shields.io/github/v/release/2025chunxi/skill-builder?include_prereleases&style=flat-square"></a>
-  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/2025chunxi/skill-builder?style=flat-square"></a>
+  <a href="https://github.com/2025chunxi/make-skill/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/2025chunxi/make-skill/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/2025chunxi/make-skill/releases/tag/v0.3.0-beta"><img alt="Release" src="https://img.shields.io/github/v/release/2025chunxi/make-skill?include_prereleases&style=flat-square"></a>
+  <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/2025chunxi/make-skill?style=flat-square"></a>
   <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white">
 </p>
 
@@ -29,7 +29,7 @@ Strong models can write a `SKILL.md`. That does not mean the result is worth bui
 - Leaking local paths, credential-like values, or unverified examples into release artifacts.
 - Producing plausible files without strict validation, regression tests, or a working `.skill` package.
 
-`skill-builder` turns those failure points into a deterministic workflow and can explicitly recommend against low-value conversions.
+`make-skill` turns those failure points into a deterministic workflow and can explicitly recommend against low-value conversions.
 
 ```mermaid
 flowchart LR
@@ -86,19 +86,19 @@ Send this in Codex:
 
 ```text
 Use $skill-installer to install:
-https://github.com/2025chunxi/skill-builder/tree/main/skill/skill-builder
+https://github.com/2025chunxi/make-skill/tree/main/skill/make-skill
 ```
 
 Start a new task, then try:
 
 ```text
-Use $skill-builder to evaluate and convert path/to/project.
+Use $make-skill to evaluate and convert path/to/project.
 Decide whether it is worth turning into a Skill before generating, validating, and packaging it.
 ```
 
 ### Option 2: Download the release
 
-Download [`skill-builder.skill`](https://github.com/2025chunxi/skill-builder/releases/download/v0.2.0-beta/skill-builder.skill), extract its top-level `skill-builder` directory into `$CODEX_HOME/skills` (default: `~/.codex/skills`), and start a new Codex task to load the Skill.
+Download [`make-skill.skill`](https://github.com/2025chunxi/make-skill/releases/download/v0.3.0-beta/make-skill.skill), extract its top-level `make-skill` directory into `$CODEX_HOME/skills` (default: `~/.codex/skills`), and start a new Codex task to load the Skill.
 
 ## Good Fits and Poor Fits
 
@@ -118,7 +118,7 @@ python -m pip install -r requirements.txt
 python scripts/build_release.py
 ```
 
-The output is `dist/skill-builder.skill`. The build runs README extraction tests, security regression tests, strict Skill validation, archive integrity checks, and repository-wide scans for secrets, PII, local paths, and unsafe archives.
+The output is `dist/make-skill.skill`. The build runs README extraction tests, security regression tests, strict Skill validation, archive integrity checks, and repository-wide scans for secrets, PII, local paths, and unsafe archives.
 
 ## Privacy and Evidence Boundaries
 
@@ -130,9 +130,9 @@ The output is `dist/skill-builder.skill`. The build runs README extraction tests
 
 ## Project Status
 
-The current release is `v0.2.0-beta`. This release adopts the new Skill name `skill-builder`; deterministic inspection, validation, and packaging paths are covered by automated tests.
+The current release is `v0.3.0-beta`. This release adopts the final Skill name `make-skill`; deterministic inspection, validation, and packaging paths are covered by automated tests.
 
-Open an [Issue](https://github.com/2025chunxi/skill-builder/issues) or read [CONTRIBUTING.md](CONTRIBUTING.md) to contribute.
+Open an [Issue](https://github.com/2025chunxi/make-skill/issues) or read [CONTRIBUTING.md](CONTRIBUTING.md) to contribute.
 
 ## License
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run offline release checks and build skill-builder.skill."""
+"""Run offline release checks and build make-skill.skill."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILL = ROOT / "skill" / "skill-builder"
+SKILL = ROOT / "skill" / "make-skill"
 DIST = ROOT / "dist"
 
 
@@ -27,7 +27,7 @@ def verify_archive(path: Path) -> None:
             raise RuntimeError(f"Corrupt archive member: {bad_member}")
         names = {name.rstrip("/") for name in archive.namelist() if name.rstrip("/")}
     roots = {name.split("/", 1)[0] for name in names}
-    if roots != {"skill-builder"}:
+    if roots != {"make-skill"}:
         raise RuntimeError(f"Unexpected archive roots: {sorted(roots)}")
     forbidden = [
         name for name in names
@@ -38,9 +38,9 @@ def verify_archive(path: Path) -> None:
     if forbidden:
         raise RuntimeError(f"Forbidden release files: {forbidden}")
     required = {
-        "skill-builder/SKILL.md",
-        "skill-builder/agents/openai.yaml",
-        "skill-builder/scripts/bootstrap_from_project.py",
+        "make-skill/SKILL.md",
+        "make-skill/agents/openai.yaml",
+        "make-skill/scripts/bootstrap_from_project.py",
     }
     if missing := sorted(required - names):
         raise RuntimeError(f"Missing release files: {missing}")
@@ -55,9 +55,9 @@ def main() -> int:
     run(python, validator, SKILL, "--strict")
     DIST.mkdir(parents=True, exist_ok=True)
     run(python, packager, SKILL, DIST)
-    verify_archive(DIST / "skill-builder.skill")
+    verify_archive(DIST / "make-skill.skill")
     run(python, ROOT / "scripts" / "security_scan.py")
-    print(DIST / "skill-builder.skill")
+    print(DIST / "make-skill.skill")
     return 0
 
 

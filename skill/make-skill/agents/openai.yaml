@@ -1,0 +1,7 @@
+interface:
+  display_name: "Make Skill"
+  short_description: "Turn projects into installable Skills"
+  default_prompt: "Use $make-skill to decide whether this project should become a Skill and package it if suitable."
+
+policy:
+  allow_implicit_invocation: true
